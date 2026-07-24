@@ -35,8 +35,8 @@ def visualise_waveform(file_path     :  str,
         sideband_values = collect_sidebands(single_wf, time, vis_params)
         single_wf = single_wf - subtract_baseline(sideband_values, sub_type = vis_params['baseline_sub'])
         ax.plot(time, single_wf,
-                marker='o', markerfacecolor='None', linestyle='None', markersize=1)
-        ax.set_title(f'Waveform #{wf_num}')
+                marker='o-', markerfacecolor='None', linestyle='None', markersize=1)
+        ax.set_title(f'CH0 Waveform #{wf_num}') # one channel case for now
         ax.set_xlabel('Time (ns)')
         ax.set_ylabel('ADC or mV')
         canvas.draw()
